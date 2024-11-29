@@ -6,7 +6,7 @@ const Header = ({ navLinks }) => {
   const [showCart, setShowCart] = useState();
   return (
     <>
-      <div className="p-10 flex justify-between items-center shadow-sm relative">
+      <div className="pt-10 flex justify-between items-center shadow-sm relative sm:px-10">
         <div
           className="flex justify-center items-center gap-10
         "
@@ -19,7 +19,7 @@ const Header = ({ navLinks }) => {
             {navLinks.map((link) => {
               return (
                 <li
-                  className="nav text-[grey] font-semibold hover:cursor-pointer"
+                  className="nav text-[grey] font-semibold hover:cursor-pointer hover:text-[black]"
                   key={link.label}
                 >
                   <a href={link.href}>{link.label}</a>
