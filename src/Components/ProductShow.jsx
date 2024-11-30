@@ -11,13 +11,9 @@ const ProductShow = ({ Shoes }) => {
   return (
     <>
       <div className=" flex flex-col gap-4 w-1/2">
-        <img
-          className="big rounded-2xl xl:w-3/4 h-[500px]"
-          src={bigShoe}
-          alt=""
-        />
+        <img className="big rounded-2xl xl:w-3/4 " src={bigShoe} alt="" />
 
-        <div className="mt-4 flex gap-4 rounded-xl ">
+        <div className="mt-4 flex gap-4 rounded-xl lg:flex sm:hidden ">
           {Shoes.map((shoe) => {
             return (
               <img

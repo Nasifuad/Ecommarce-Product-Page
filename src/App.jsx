@@ -10,7 +10,7 @@ const App = () => {
   ];
   return (
     <>
-      <div className="max-container bg-[white] h-screen w-100%">
+      <div className=" bg-[white] h-screen w-100%">
         <Header navLinks={navLinks} />
         <Hero />
       </div>

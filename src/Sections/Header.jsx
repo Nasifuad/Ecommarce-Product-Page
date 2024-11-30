@@ -1,21 +1,24 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import iconCart from "../assets/images/icon-cart.svg";
+import iconMenu from "../assets/images/icon-menu.svg";
+
 import imageAvatar from "../assets/images/image-avatar.png";
 const Header = ({ navLinks }) => {
   const [showCart, setShowCart] = useState();
   return (
     <>
-      <div className="pt-10 flex justify-between items-center shadow-sm relative sm:px-10">
+      <div className=" xl:max-container  pt-10 flex justify-between items-center shadow-sm relative sm:px-10">
         <div
-          className="flex justify-center items-center gap-10
+          className="flex justify-center items-center gap-5
         "
         >
+          <img src={iconMenu} alt="menu" className="xl:hidden" />
           <h1 className="text-3xl font-kumbh lowercase text-[very-dark-blue] opacity-70 font-[800] ">
             Sneakers
           </h1>
 
-          <ul className="flex justify-center items-center gap-10">
+          <ul className="hidden xl:flex  justify-center items-center gap-10">
             {navLinks.map((link) => {
               return (
                 <li
