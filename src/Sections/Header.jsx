@@ -8,7 +8,7 @@ const Header = ({ navLinks }) => {
   const [showCart, setShowCart] = useState();
   return (
     <>
-      <div className=" xl:max-container  pt-10 flex justify-between items-center shadow-sm relative sm:px-10">
+      <div className=" xl:max-container  pt-10 flex xl:justify-between justify-around items-center shadow-sm relative sm:px-10">
         <div
           className="flex justify-center items-center gap-5
         "

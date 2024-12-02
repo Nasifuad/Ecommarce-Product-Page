@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import leftArrow from "../assets/images/icon-previous.svg";
+import rightArrow from "../assets/images/icon-next.svg";
 /* eslint-disable react/prop-types */
 const ProductShow = ({ Shoes }) => {
   const [bigShoe, setbigShoe] = useState(Shoes[0].full);
@@ -10,10 +11,26 @@ const ProductShow = ({ Shoes }) => {
   }
   return (
     <>
-      <div className=" flex flex-col gap-4 w-1/2">
-        <img className="big rounded-2xl xl:w-3/4 " src={bigShoe} alt="" />
+      <div className=" flex flex-col gap-4 xl:w-1/2 w-full">
+        <div className="relative w-full">
+          <img
+            className="mt-2 big xl:rounded-2xl xl:w-3/4 w-full "
+            src={bigShoe}
+            alt=""
+          />
+          <img
+            className="xl:hidden absolute top-1/2 left-0  p-3 bg-white rounded-full   cursor-pointer"
+            src={leftArrow}
+            alt="left"
+          />
+          <img
+            className="xl:hidden p-3 bg-white rounded-full  absolute top-1/2 right-0  cursor-pointer"
+            src={rightArrow}
+            alt="right"
+          />
+        </div>
 
-        <div className="mt-4 flex gap-4 rounded-xl lg:flex sm:hidden ">
+        <div className="mt-4 gap-4 rounded-xl hidden lg:flex  ">
           {Shoes.map((shoe) => {
             return (
               <img

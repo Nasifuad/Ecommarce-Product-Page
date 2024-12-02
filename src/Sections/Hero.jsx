@@ -4,7 +4,7 @@ import { Shoes } from "../Constrants";
 const Hero = () => {
   return (
     <>
-      <div className=" p-10 max-container flex flex-col  xl:flex-row justify-center items-center  ">
+      <div className="  xl:max-container  w-100% flex flex-col  xl:flex-row justify-center items-center  ">
         <ProductShow Shoes={Shoes} />
         <ProductInfo />
       </div>
