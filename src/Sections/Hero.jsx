@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import ProductInfo from "../Components/ProductInfo";
 import ProductShow from "../Components/ProductShow";
-import { Shoes } from "../Constrants";
-const Hero = ({ handleAddToCart }) => {
+
+const Hero = ({ handleAddToCart, Shoes }) => {
   return (
     <>
       <div className="  xl:max-container  w-100% flex flex-col  xl:flex-row justify-center items-center  ">

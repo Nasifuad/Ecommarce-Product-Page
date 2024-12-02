@@ -4,9 +4,11 @@ import iconCart from "../assets/images/icon-cart.svg";
 import iconMenu from "../assets/images/icon-menu.svg";
 import iconClose from "../assets/images/icon-close.svg";
 import imageAvatar from "../assets/images/image-avatar.png";
-const Header = ({ navLinks }) => {
+import imageShoe from "../assets/images/image-product-1-thumbnail.jpg";
+const Header = ({ navLinks, count }) => {
   const [showCart, setShowCart] = useState();
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState();
+
   // const [menuIcon, setMenuIcon] = useState(iconMenu);
   const handleClick = (e) => {
     e.preventDefault();
@@ -60,12 +62,12 @@ const Header = ({ navLinks }) => {
           />
         </div>
       </div>
-      {showCart && <Cart />}
+      {showCart && <Cart count={count} />}
     </>
   );
 };
 
-const Cart = () => {
+const Cart = ({ count }) => {
   return (
     <>
       <div
@@ -77,7 +79,11 @@ const Cart = () => {
         <h3 className="font-bold text-2xl text-[black] w-full p-4">Cart</h3>
         <hr />
         <div className="font-semibold text-[grey] h-[100px] grid place-content-center">
-          <p>Your cart is empty</p>
+          {count ? (
+            <CarItem count={count} />
+          ) : (
+            <p className="text-[grey]">Your cart is empty</p>
+          )}
         </div>
       </div>
     </>
@@ -105,6 +111,24 @@ const Sidebar = ({ setShowMenu, navLinks }) => {
         </ul>
       </div>
     </>
+  );
+};
+const CarItem = ({ count }) => {
+  return (
+    <div className=" w-full gap-10 flex justify-between items-center">
+      <div className="flex justify-start items-center">
+        <img src={imageShoe} alt="shoe" className="w-[60px] h-[60px]" />
+      </div>
+      <div className="flex flex-col gap-2">
+        <p className="text-xl font-semibold">Fall Limited Edition Sneakers</p>
+        <div className="flex">
+          <p className="text-sm flex gap-2 text-[grey]">
+            $125.00 x {count}{" "}
+            <span className="font-bold">${count * 125}.00</span>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 export default Header;
