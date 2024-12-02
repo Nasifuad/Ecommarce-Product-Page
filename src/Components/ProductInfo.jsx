@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import iconPlus from "../assets/images/icon-plus.svg";
 import iconMinus from "../assets/images/icon-minus.svg";
+import iconCart from "../assets/images/icon-cart.svg";
 import { useState } from "react";
-const ProductInfo = () => {
+const ProductInfo = ({ handleAddToCart }) => {
   const [count, setcount] = useState(0);
   return (
     <>
@@ -44,6 +46,19 @@ const ProductInfo = () => {
               alt="plus"
             />
           </div>
+          <button
+            className="flex mt-4 border bg-[#ff7d1a] py-2 px-4 text-[black] text-lg font-kumbh font-semibold justify-center items-center gap-2 rounded-full xl:w-40 w-full"
+            onClick={() => {
+              handleAddToCart(count);
+            }}
+          >
+            <img
+              className="w-4 h-4 filter filter-black"
+              src={iconCart}
+              alt="add"
+            />
+            <p>Add to cart</p>
+          </button>
         </div>
       </div>
     </>

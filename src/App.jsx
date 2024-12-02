@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./Sections/Header";
 import Hero from "./Sections/Hero";
 const App = () => {
@@ -8,11 +9,16 @@ const App = () => {
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
+  const [count, setcount] = useState(0);
+  const handleAddToCart = (count) => {
+    setcount(count);
+    console.log(count);
+  };
   return (
     <>
       <div className=" bg-[white] h-screen w-full">
-        <Header navLinks={navLinks} />
-        <Hero />
+        <Header navLinks={navLinks} count={count} />
+        <Hero handleAddToCart={handleAddToCart} />
       </div>
     </>
   );
