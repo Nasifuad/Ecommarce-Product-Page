@@ -13,7 +13,7 @@ const Header = ({ navLinks, count }) => {
   const handleClick = (e) => {
     e.preventDefault();
     setShowMenu(!showMenu);
-    console.log("test");
+    console.log("testing");
   };
   return (
     <>
